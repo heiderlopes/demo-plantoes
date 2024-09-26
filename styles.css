@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.month {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 colunas: Domingo a Sábado */
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.day {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.week-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Cabeçalho: Domingo a Sábado */
+    font-weight: bold;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Estilos para os dias dos grupos */
+.day.group-a {
+    background-color: lightblue;
+}
+
+.day.group-b {
+    background-color: lightgreen;
+}
+
+/* Estilos especiais para Domingo e Sábado */
+.day.sunday,
+.day.saturday {
+    background-color: #d3d3d3; /* Cor cinza */
+}
+
+/* Estilos especiais para Quarta-feira */
+.day.wednesday {
+    background-color: lightcoral; /* Cor diferente para quarta-feira */
+}
+
+/* Estilos específicos para week-dates e group-members */
+.week-dates {
+    font-weight: bold;
+    text-align: right; /* Alinhamento à direita */
+    font-size: 1.2em;  /* Tamanho da fonte maior */
+}
+
+.group-members {
+    margin-top: 5px;
+    text-align: left; /* Para manter o texto dos membros alinhado à esquerda */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .week {
+        display: block; /* Muda para lista em telas menores */
+        border: none; /* Remove borda para uma aparência mais limpa */
+    }
+
+    .day {
+        margin: 5px 0; /* Margem entre os dias */
+        text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+    }
+
+    .week-header {
+        display: none; /* Esconde o cabeçalho em visualização de lista */
+    }
+
+    /* Estilos para o cabeçalho dos dias */
+    .day:before {
+        content: attr(data-day); /* Adiciona o nome do dia antes do dia */
+        font-weight: bold;
+        display: block; /* Exibe como bloco */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .day {
+        font-size: 0.9em; /* Reduz o tamanho da fonte */
+    }
+
+    .week-dates {
+        font-size: 1em; /* Tamanho da fonte menor em telas pequenas */
+    }
+}
+
+
+.day {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.group-a {
+    background-color: #f0f8ff; /* Cor do Grupo A */
+}
+
+.group-b {
+    background-color: #ffe4e1; /* Cor do Grupo B */
+}
+
+.both-groups {
+    background-color: #ffffe0; /* Cor das quartas-feiras para ambos os grupos */
+}
